@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import putin from './putin.jpg';
-import deep from './deep.jpeg';
-import drink from './drink.jpg';
-import girls from './girls.jpeg';
-import mount from './mount.jpeg';
-import nigger from './nigger.jpeg';
-import rest from './rest.jpeg';
-import what from './what.jpeg';
-import publ from './publ.png';
-import mar from './mar.png';
-import vid from './vid.png';
-import rosgramm from './rosgramm.png';
+import putin from './img/putin.jpg';
+import deep from './img/deep.jpeg';
+import drink from './img/drink.jpg';
+import girls from './img/girls.jpeg';
+import mount from './img/mount.jpeg';
+import nigger from './img/nigger.jpeg';
+import rest from './img/rest.jpeg';
+import what from './img/what.jpeg';
+import publ from './img/publ.png';
+import mar from './img/mar.png';
+import vid from './img/vid.png';
+import rosgramm from './img/rosgramm.png';
 import './App.css';
 import Gallery from './components/Gallery';
 import { PhotoGallery } from './components/Gallery'
