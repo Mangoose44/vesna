@@ -7,21 +7,19 @@ import mount from './mount.jpeg';
 import nigger from './nigger.jpeg';
 import rest from './rest.jpeg';
 import what from './what.jpeg';
-import fishing from './fishing.jpg';
-import horse from './horse.jpg';
-import palace from './palace.jpeg';
-import tiger from './tiger.jpeg';
-import gachi from './gachi.jpeg';
-import friend from './friend.jpg';
-import zombi from './zombi.jpeg';
-import potato from './potato.jpeg';
-import stone from './stone.jpeg';
 import publ from './publ.png';
 import mar from './mar.png';
 import vid from './vid.png';
 import rosgramm from './rosgramm.png';
 import './App.css';
+import Gallery from './components/Gallery';
+import { PhotoGallery } from './components/Gallery'
 
+const allImages = [
+    [what, mar, putin],
+    [drink, mar, vid],
+    [rosgramm, putin]
+]
 
 function PutinOption ({ activity }) {
   return <span className='storyName1'><b>{activity}</b></span>
@@ -152,38 +150,9 @@ function App () {
               </div>
                 <span className='publicationsVideosMarks'> <b>ОТМЕТКИ</b></span>
             </div>
-            <div className='photoGallery'>
-              <div className='photo'>
-                <img src={tiger} />
-              </div>
-              <div className='photo'>
-                <img src={horse} />
-              </div>
-              <div className='photo'>
-                <img src={fishing} />
-              </div>
-            </div>          
-            <div className='photoGallery'>
-  
-              <div className='photo'>
-                <img src={gachi} />
-              </div>
-              <div className='photo'>
-                <img src={friend} />
-              </div>
-            </div>
-            <div className='photoGallery'>
-              <div className='photo'>
-                <img src={zombi} />
-              </div>
-              <div className='photo'>
-                <img src={potato} />
-              </div>
-              <div className='photo'>
-                <img src={stone} />
-              </div>
-            </div>  
-    </div>     
+            <Gallery />
+            <PhotoGallery images={allImages} />
+           </div>  
   );
 } 
 export default App;
