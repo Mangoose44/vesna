@@ -10,9 +10,10 @@ import what from './img/what.jpeg';
 import publ from './img/publ.png';
 import mar from './img/mar.png';
 import vid from './img/vid.png';
-import rosgramm from './img/rosgramm.png';
+
 import './App.css';
 import Gallery from './components/Gallery';
+import TopLine from './components/TopLine';
 
 
 function PutinOption ({ activity }) {
@@ -85,14 +86,8 @@ function App () {
   return (
     <div className="App">
       <div className="header">
-        <div className='topLine'>
-          <img src={rosgramm} /> 
-        <form className='search'>
-          <input type="text" placeholder="Поиск"></input>
-        </form>
-        <button className='singInButton'><b>Войти</b> </button>
-        <button className='registrationButton'><b>Зарегистрироваться</b> </button>
-        </div>
+        <TopLine />
+
         <div className='downpartHeader'>
           <div className="left">
             <div className="avatar-container"> 
