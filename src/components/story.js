@@ -7,27 +7,8 @@ import nigger from '../img/nigger.jpeg';
 import rest from '../img/rest.jpeg';
 import what from '../img/what.jpeg';
 
-
-
- let putinActivitiesImages = [
-  deep, drink, girls, mount, nigger, rest, what
-]
-
-export function PutinActivities ({ activities }) {
-    return activities.map((activity, key) => {
-        return (
-        <div className='story'>
-            <img src={putinActivitiesImages} alt={key} />
-        </div>
-        )
-    })
-    }
-
-export function PutinOption ({ activity }) {
-    return <span className='storyName1'><b>{activity}</b></span>
-}
-
-let activity = [
+  let activitiesInfo = {
+    activities: [
       'плаваю',
       'балуюсь',
       'с девченками',
@@ -36,3 +17,58 @@ let activity = [
       'чилю',
       'охуели',
       ]
+  }
+
+export function PutinOption ({ activity }) {
+  return <span className='storyName1'><b>{activitiesInfo.activity}</b></span>
+}
+
+export const putinActivities = [
+ {
+     image: deep,
+     text: 'плаваю'
+ },
+ {
+     image: drink,
+     text: 'балуюсь'
+ },
+ {
+     image: girls,
+     text: 'с девченками'
+ },
+ {
+     image: mount,
+     text: 'на горе'
+ },
+ {
+     image: nigger,
+     text: 'экзотика'
+ },
+ {
+     image: rest,
+     text: 'чилю'
+ },
+ {
+     image: what,
+     text: 'охуели'
+ },
+]
+
+console.log({ putinActivities })
+
+export function PutinActivities ({ activities }) {
+  return activities.map((activity, key) => {
+    return (
+      <div className='story' key={key}>
+        <img src={activity} alt={key} />
+      </div>
+    )
+  })
+}
+
+export function RenderActivities () {
+    return activitiesInfo.activities.map((activity, key) => 
+        <PutinOption activity={activity} key={key} />)
+}
+
+export default PutinActivities 
