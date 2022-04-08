@@ -12,8 +12,9 @@ import TabButtons from './components/TabButtons'
 import PutinActivities, { PutinOption, putinActivities } from './components/Story';
 
 function App () {
-
+  // study useState react method
   const [isPutinAlive, togglePutinAliveness] = useState(true)
+  const [filterActivity, setFilterActivity] = useState(null)
 
   let userInfo = {
     name: 'Putin',
@@ -36,10 +37,12 @@ function App () {
       ]
   }
 
+  const filteredActivies = putinActivities.filter(f => f.text.includes(filterActivity))
+
   return (
     <div className="App">
       <div className="header">
-        <TopLine />
+        <TopLine onChange={e => setFilterActivity(e)} />
 
         <div className='downpartHeader'>
           <div className="left">
@@ -71,7 +74,7 @@ function App () {
       </div>
             <div className='Bottom'>
               <div className='storyraw'>
-                <PutinActivities activities={putinActivities} />
+                <PutinActivities activities={filteredActivies} />
               </div>
 
             </div>
