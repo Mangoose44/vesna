@@ -1,21 +1,14 @@
 import React, { useState } from 'react';
 import putin from './img/putin.jpg';
-import deep from './img/deep.jpeg';
-import drink from './img/drink.jpg';
-import girls from './img/girls.jpeg';
-import mount from './img/mount.jpeg';
-import nigger from './img/nigger.jpeg';
-import rest from './img/rest.jpeg';
-import what from './img/what.jpeg';
 import publ from './img/publ.png';
 import mar from './img/mar.png';
 import vid from './img/vid.png';
 import rosgramm from './img/rosgramm.png';
 import './App.css';
 import Gallery from './components/Gallery';
+import PutinActivities, { PutinOption } from './components/Story';
 
-
-function PutinOption ({ activity }) {
+/*function PutinOption ({ activity }) {
   return <span className='storyName1'><b>{activity}</b></span>
 }
 
@@ -31,7 +24,7 @@ function PutinActivities ({ activities }) {
       </div>
     )
   })
-}
+}*/
 
 function App () {
   let x = 1;
@@ -61,25 +54,11 @@ function App () {
       ]
   }
 
-  for (let dick in userInfo) {
-    console.log({ dick, value: userInfo[dick] })
-  }
 
-  let putinIsAlive = true
-  while (!putinIsAlive) {
-    console.log('ПУТИН ЖИВ СУКА')
-  }
 
-  setTimeout(() => {
-    putinIsAlive = false;
-  }, 5000)
-  console.log({ userInfo, name: userInfo['name'] })
-  console.log({ putinActivities })
 
-  function renderActivities () {
-    return userInfo.activities.map((activity, key) => 
-      <PutinOption activity={activity} key={key} />)
-  }
+
+
   
 
   return (
@@ -123,11 +102,11 @@ function App () {
       </div>
             <div className='Bottom'>
               <div className='storyraw'>
-                {<PutinActivities activities={putinActivities} />}
+                <PutinActivities />
               </div>
             </div>
             <div className='storyDescription'>
-              {renderActivities()}
+              <PutinOption />
             </div>
             <hr className='line'/>
             <div className='row3'>
