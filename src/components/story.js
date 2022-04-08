@@ -60,7 +60,8 @@ export function PutinActivities ({ activities }) {
   return activities.map((activity, key) => {
     return (
       <div className='story' key={key}>
-        <img src={activity} alt={key} />
+        <img src={activity.image} alt={activity.text} />
+        <p>{activity.text}</p>
       </div>
     )
   })

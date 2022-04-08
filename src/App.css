@@ -119,15 +119,20 @@ a:any-link {
   margin-left: 100px;
 }
 
-.story img{
+.story img {
   border-radius: 50%;
   height: 100px;
   width: 100px;
-  margin-left: 40px;
+  margin: 20px;
+  margin-bottom: 0px;
   object-fit: cover;
   box-shadow: 
   0 0 0 2px rgb(255, 255, 255),
   0 0 0 3px rgb(97, 97, 97);
+}
+
+.story p {
+  text-align: center;
 }
 
 .storyDescription {
