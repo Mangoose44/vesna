@@ -7,33 +7,12 @@ import vid from './img/vid.png';
 import './App.css';
 import Gallery from './components/Gallery';
 
-import PutinActivities, { PutinOption } from './components/Story';
+import PutinActivities, { PutinOption, putinActivities } from './components/Story';
 import TopLine from './components/TopLine';
 
-/*function PutinOption ({ activity }) {
-  return <span className='storyName1'><b>{activity}</b></span>
-}
-
-const putinActivities = [
-  deep, drink, girls, mount, nigger, rest, what
-]
-
-function PutinActivities ({ activities }) {
-  return activities.map((activity, key) => {
-    return (
-      <div className='story'>
-        <img src={activity} alt={key} />
-      </div>
-    )
-  })
-}*/
-
 function App () {
-  let x = 1;
-  let b = "putin";
 
   const [isPutinAlive, togglePutinAliveness] = useState(true)
-
 
   let userInfo = {
     name: 'Putin',
@@ -56,13 +35,6 @@ function App () {
       ]
   }
 
-
-
-
-
-
-  
-
   return (
     <div className="App">
       <div className="header">
@@ -72,7 +44,7 @@ function App () {
           <div className="left">
             <div className="avatar-container"> 
               <div className="avatar" style={{ background: isPutinAlive ? '#fff' : '#000' }}>
-                <img src={putin} />
+                <img src={putin} alt={'...'} />
               </div>
             </div>
           </div>
@@ -98,8 +70,9 @@ function App () {
       </div>
             <div className='Bottom'>
               <div className='storyraw'>
-                <PutinActivities />
+                <PutinActivities activities={putinActivities} />
               </div>
+
             </div>
             <div className='storyDescription'>
               <PutinOption />

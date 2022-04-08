@@ -23,15 +23,44 @@ export function PutinOption ({ activity }) {
   return <span className='storyName1'><b>{activitiesInfo.activity}</b></span>
 }
 
-const putinActivities = [
-  deep, drink, girls, mount, nigger, rest, what
+export const putinActivities = [
+ {
+     image: deep,
+     text: 'плаваю'
+ },
+ {
+     image: drink,
+     text: 'балуюсь'
+ },
+ {
+     image: girls,
+     text: 'с девченками'
+ },
+ {
+     image: mount,
+     text: 'на горе'
+ },
+ {
+     image: nigger,
+     text: 'экзотика'
+ },
+ {
+     image: rest,
+     text: 'чилю'
+ },
+ {
+     image: what,
+     text: 'охуели'
+ },
 ]
+
+console.log({ putinActivities })
 
 export function PutinActivities ({ activities }) {
   return activities.map((activity, key) => {
     return (
-      <div className='story'>
-        <img src={putinActivities} alt={key} />
+      <div className='story' key={key}>
+        <img src={activity} alt={key} />
       </div>
     )
   })
@@ -41,7 +70,5 @@ export function RenderActivities () {
     return activitiesInfo.activities.map((activity, key) => 
         <PutinOption activity={activity} key={key} />)
 }
-
-{<PutinActivities activities={putinActivities} />}
 
 export default PutinActivities 

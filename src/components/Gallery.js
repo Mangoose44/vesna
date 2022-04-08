@@ -23,7 +23,7 @@ export function PhotoGallery ({ images }) {
     return (
         images.map((e, index) => (
             <div className='photoGallery'>
-                {e.map((image, index) => <PhotoGalleryItem image={image} />)}
+                {e.map((image, index) => <PhotoGalleryItem image={image} key={index} />)}
             </div>
         ))  
     )
