@@ -14,6 +14,7 @@ import vid from './img/vid.png';
 import './App.css';
 import Gallery from './components/Gallery';
 import TopLine from './components/TopLine';
+import TabButtons from './components/TabButtons'
 
 
 function PutinOption ({ activity }) {
@@ -125,20 +126,7 @@ function App () {
               {renderActivities()}
             </div>
             <hr className='line'/>
-            <div className='row3'>
-              <div>
-                <img src={publ} />
-              </div>
-                <span className='publicationsVideosMarks'> <b>ПУБЛИКАЦИИ</b></span>
-              <div>
-                <img src={vid} />
-              </div>
-                <span className='publicationsVideosMarks'> <b>ВИДЕО</b></span>
-                <div>
-                <img src={mar} />
-              </div>
-                <span className='publicationsVideosMarks'> <b>ОТМЕТКИ</b></span>
-            </div>
+            <TabButtons />
             <Gallery />
            </div>  
   );
