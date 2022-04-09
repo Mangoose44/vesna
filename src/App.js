@@ -8,6 +8,7 @@ import './App.css';
 import Gallery from './components/Gallery';
 import TopLine from './components/TopLine';
 import TabButtons from './components/TabButtons'
+import UsernameButton from './components/Username&Button'
 
 import PutinActivities, { PutinOption, putinActivities } from './components/Story';
 
@@ -46,17 +47,14 @@ function App () {
 
         <div className='downpartHeader'>
           <div className="left">
-            <div className="avatar-container"> 
+            <div className="avatar-container"> 3
               <div className="avatar" style={{ background: isPutinAlive ? '#fff' : '#000' }}>
                 <img src={putin} alt={'...'} />
               </div>
             </div>
           </div>
           <div className="right">
-            <div className="row">
-              <span className='leader'><b>{userInfo.name}</b></span>
-              <button onClick={() => togglePutinAliveness(!isPutinAlive)} className='suscribeButton'><b>{isPutinAlive ? 'Убить путина' : 'Оживить путина'}</b> </button>
-            </div>
+            <UsernameButton name={userInfo.name} />
                 <div className='row2'>
                   <span className='number'><b>100</b> публикаций</span>
                   <span className='number'><b>140000000</b> подписчиков</span>
