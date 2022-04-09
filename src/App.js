@@ -92,8 +92,8 @@ function App () {
               <span className='leader'><b>{userInfo.name}</b></span>
               <button onClick={() => togglePutinAliveness(!isPutinAlive)} className='suscribeButton'><b>{isPutinAlive ? 'Убить путина' : 'Оживить путина'}</b> </button>
             </div>
-                <UserDescription/>
-                <UserInfo />
+            <UserInfo />
+            <UserDescription/>
           </div>
         </div>
       </div>
