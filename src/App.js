@@ -10,6 +10,7 @@ import TopLine from './components/TopLine';
 import TabButtons from './components/TabButtons'
 
 import PutinActivities, { PutinOption, putinActivities } from './components/Story';
+import UserDescription from './components/UserDescription';
 
 function App () {
   // study useState react method
@@ -62,12 +63,8 @@ function App () {
                   <span className='number'><b>140000000</b> подписчиков</span>
                   <span className='number'><b>5</b> подписок</span>
                 </div>
-                <div className='collum'>
-                  <div className='collumObject'><b>President of the world</b></div>
-                  <div className='collumObject2'><b>Good guy</b></div>
-                  <div className='collumObject'>Hunter</div>
-                  <div className='collumObject'>Warrior</div>
-                  <a href="http://kremlin.ru/">My Homies</a>
+                <div>
+                  <UserDescription/>
                 </div>
           </div>
         </div>
