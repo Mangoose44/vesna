@@ -8,9 +8,9 @@ import './App.css';
 import Gallery from './components/Gallery';
 import TopLine from './components/TopLine';
 import TabButtons from './components/TabButtons'
+import UserDescription from './components/UserDescription';
 
 import PutinActivities, { PutinOption, putinActivities } from './components/Story';
-import UserDescription from './components/UserDescription';
 
 function App () {
   // study useState react method
