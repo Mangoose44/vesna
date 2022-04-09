@@ -9,10 +9,10 @@
 .avatar-container{
   width: 50%;
   margin-left: 150px;
+  margin-top: 20px;
 }
 
 .header {
-  
   display: flex;
   flex-direction: column;
 }
@@ -20,6 +20,7 @@
 .downpartHeader {
   display: flex;
   flex-direction: row;
+  margin-bottom: 0px;
 }
 .left {
   width: 400px;
@@ -27,6 +28,7 @@
 
 .right {
   width: 70%;
+  padding-top: 20px;
 }
 
 .avatar img {
@@ -48,7 +50,7 @@
 .row2 {
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
+  margin-top: 0px;
   margin-bottom: 10px;
 }
 
