@@ -82,9 +82,8 @@ function App () {
 
   return (
     <div className="App">
-      <div className="header">
+      <div>
         <TopLine />
-
         <div className='downpartHeader'>
          <UserAvatar isPutinAlive={isPutinAlive} />
           <div className="right">
