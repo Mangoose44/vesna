@@ -15,7 +15,7 @@ import Gallery from './components/Gallery';
 import TopLine from './components/TopLine';
 import TabButtons from './components/TabButtons';
 import UserInfo from './components/UserInfo';
-
+import UserAvatar from './components/UserAvatar';
 
 function PutinOption ({ activity }) {
   return <span className='storyName1'><b>{activity}</b></span>
@@ -72,12 +72,6 @@ function App () {
     console.log('ПУТИН ЖИВ СУКА')
   }
 
-  setTimeout(() => {
-    putinIsAlive = false;
-  }, 5000)
-  console.log({ userInfo, name: userInfo['name'] })
-  console.log({ putinActivities })
-
   function renderActivities () {
     return userInfo.activities.map((activity, key) => 
       <PutinOption activity={activity} key={key} />)
@@ -90,13 +84,7 @@ function App () {
         <TopLine />
 
         <div className='downpartHeader'>
-          <div className="left">
-            <div className="avatar-container"> 
-              <div className="avatar" style={{ background: isPutinAlive ? '#fff' : '#000' }}>
-                <img src={putin} />
-              </div>
-            </div>
-          </div>
+         <UserAvatar isPutinAlive={isPutinAlive} />
           <div className="right">
             <div className="row">
               <span className='leader'><b>{userInfo.name}</b></span>
