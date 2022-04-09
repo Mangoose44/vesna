@@ -1,20 +1,46 @@
 import React, { useState } from 'react';
 import putin from './img/putin.jpg';
+import deep from './img/deep.jpeg';
+import drink from './img/drink.jpg';
+import girls from './img/girls.jpeg';
+import mount from './img/mount.jpeg';
+import nigger from './img/nigger.jpeg';
+import rest from './img/rest.jpeg';
+import what from './img/what.jpeg';
 import publ from './img/publ.png';
 import mar from './img/mar.png';
 import vid from './img/vid.png';
-
 import './App.css';
 import Gallery from './components/Gallery';
 import TopLine from './components/TopLine';
-import TabButtons from './components/TabButtons'
+import TabButtons from './components/TabButtons';
+import UserInfo from './components/UserInfo';
 
-import PutinActivities, { PutinOption, putinActivities } from './components/Story';
+
+function PutinOption ({ activity }) {
+  return <span className='storyName1'><b>{activity}</b></span>
+}
+
+const putinActivities = [
+  deep, drink, girls, mount, nigger, rest, what
+]
+
+function PutinActivities ({ activities }) {
+  return activities.map((activity, key) => {
+    return (
+      <div className='story'>
+        <img src={activity} alt={key} />
+      </div>
+    )
+  })
+}
 
 function App () {
-  // study useState react method
+  let x = 1;
+  let b = "putin";
+
   const [isPutinAlive, togglePutinAliveness] = useState(true)
-  const [filterActivity, setFilterActivity] = useState(null)
+
 
   let userInfo = {
     name: 'Putin',
@@ -37,18 +63,37 @@ function App () {
       ]
   }
 
-  const filteredActivies = putinActivities.filter(f => f.text.includes(filterActivity))
+  for (let dick in userInfo) {
+    console.log({ dick, value: userInfo[dick] })
+  }
+
+  let putinIsAlive = true
+  while (!putinIsAlive) {
+    console.log('ПУТИН ЖИВ СУКА')
+  }
+
+  setTimeout(() => {
+    putinIsAlive = false;
+  }, 5000)
+  console.log({ userInfo, name: userInfo['name'] })
+  console.log({ putinActivities })
+
+  function renderActivities () {
+    return userInfo.activities.map((activity, key) => 
+      <PutinOption activity={activity} key={key} />)
+  }
+  
 
   return (
     <div className="App">
       <div className="header">
-        <TopLine onChange={e => setFilterActivity(e)} />
+        <TopLine />
 
         <div className='downpartHeader'>
           <div className="left">
             <div className="avatar-container"> 
               <div className="avatar" style={{ background: isPutinAlive ? '#fff' : '#000' }}>
-                <img src={putin} alt={'...'} />
+                <img src={putin} />
               </div>
             </div>
           </div>
@@ -57,11 +102,7 @@ function App () {
               <span className='leader'><b>{userInfo.name}</b></span>
               <button onClick={() => togglePutinAliveness(!isPutinAlive)} className='suscribeButton'><b>{isPutinAlive ? 'Убить путина' : 'Оживить путина'}</b> </button>
             </div>
-                <div className='row2'>
-                  <span className='number'><b>100</b> публикаций</span>
-                  <span className='number'><b>140000000</b> подписчиков</span>
-                  <span className='number'><b>5</b> подписок</span>
-                </div>
+                <UserInfo />
                 <div className='collum'>
                   <div className='collumObject'><b>President of the world</b></div>
                   <div className='collumObject2'><b>Good guy</b></div>
@@ -74,12 +115,11 @@ function App () {
       </div>
             <div className='Bottom'>
               <div className='storyraw'>
-                <PutinActivities activities={filteredActivies} />
+                {<PutinActivities activities={putinActivities} />}
               </div>
-
             </div>
             <div className='storyDescription'>
-              <PutinOption />
+              {renderActivities()}
             </div>
             <hr className='line'/>
             <TabButtons />
